@@ -4,7 +4,7 @@
 
 Name:           texlive-split-e
 Version:        %{tl_version}
-Release:        24
+Release:        25
 Epoch:          8
 Summary:        TeX formatting system
 License:        Artistic 2.0 and GPLv2 and GPLv2+ and LGPLv2+ and LPPL and MIT and Public Domain and UCD and Utopia
@@ -286,7 +286,6 @@ Source7147:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/t
 Source7152:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/collection-langitalian.tar.xz
 Source7153:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/collection-langjapanese.tar.xz
 Source7159:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/collection-langkorean.tar.xz
-Source7161:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/collection-langother.tar.xz
 Source7162:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/collection-langpolish.tar.xz
 Source7164:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/collection-langportuguese.tar.xz
 Source7165:     http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2018/tlnet-final/archive/collection-langspanish.tar.xz
@@ -5143,40 +5142,6 @@ Provides:       tex(lucnanummj.fd) = %{tl_version}, tex(t1nanumgt.fd) = %{tl_ver
 Provides:       tex(t1nanummj.fd) = %{tl_version}, tex(ts1nanumgt.fd) = %{tl_version}
 Provides:       tex(ts1nanummj.fd) = %{tl_version}
 
-%package -n texlive-collection-langother
-Summary:        Other languages
-Version:        svn46722
-Provides:       texlive-collection-langafrica = svn30372.0.obsolete
-Obsoletes:      texlive-collection-langafrica <= svn30372.0
-Provides:       texlive-collection-langindic = svn35737.0.obsolete
-Obsoletes:      texlive-collection-langindic <= svn35737.0
-Requires:       texlive-base, texlive-collection-basic, texlive-amsldoc-vn-doc, texlive-aramaic-serto
-Requires:       texlive-babel-azerbaijani, texlive-babel-esperanto
-Requires:       texlive-babel-georgian, texlive-babel-hebrew
-Requires:       texlive-babel-indonesian, texlive-babel-interlingua
-Requires:       texlive-babel-malay, texlive-babel-sorbian
-Requires:       texlive-babel-thai, texlive-babel-vietnamese
-Requires:       texlive-bangtex, texlive-bengali, texlive-burmese, texlive-cjhebrew
-Requires:       texlive-ctib, texlive-ebong, texlive-ethiop, texlive-ethiop-t1
-Requires:       texlive-fc, texlive-fonts-tlwg, texlive-hyphen-afrikaans, texlive-hyphen-armenian
-Requires:       texlive-hyphen-coptic, texlive-hyphen-esperanto
-Requires:       texlive-hyphen-ethiopic, texlive-hyphen-georgian
-Requires:       texlive-hyphen-indic, texlive-hyphen-indonesian
-Requires:       texlive-hyphen-interlingua, texlive-hyphen-sanskrit
-Requires:       texlive-hyphen-thai, texlive-hyphen-turkmen
-Requires:       texlive-latex-mr-doc, texlive-latexbangla
-Requires:       texlive-lshort-thai-doc, texlive-lshort-vietnamese-doc
-Requires:       texlive-ntheorem-vn-doc, texlive-padauk, texlive-sanskrit, texlive-sanskrit-t1
-Requires:       texlive-thaienum, texlive-thaispec, texlive-velthuis, texlive-vntex
-Requires:       texlive-wnri, texlive-wnri-latex, texlive-xetex-devanagari
-
-%description -n texlive-collection-langother
-Support for languages not otherwise listed, including Thai,
-Vietnamese, Hebrew, Indonesian, and plenty more.  The split is
-made simply on the basis of the size of the support, to keep
-both collection sizes and the number of collections reasonable.
-
-
 %package -n texlive-collection-langpolish
 Summary:        Polish
 Version:        svn44371
@@ -9910,8 +9875,6 @@ rm -f %{buildroot}%{_datadir}/texlive/texmf-dist/tlpkg/tlpobj/*
 
 %files -n texlive-collection-langkorean
 
-%files -n texlive-collection-langother
-
 %files -n texlive-collection-langpolish
 
 %files -n texlive-collection-langportuguese
@@ -10401,6 +10364,9 @@ rm -f %{buildroot}%{_datadir}/texlive/texmf-dist/tlpkg/tlpobj/*
 %doc %{_texdir}/texmf-dist/doc/latex/correctmathalign/
 
 %changelog
+* Thu Aug 19 2021 sunguoshuai <sunguoshuai@huawei.com> - 8:2018-25
+- Del texlive-collection-langother who requires texlive-vntex
+
 * Wed May 19 2021 maminjie <maminjie1@huawei.com> - 8:2018-24
 - split texlive
 
